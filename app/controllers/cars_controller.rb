@@ -1,24 +1,20 @@
 class CarsController < ApplicationController
+  before_action :set_cars, only: [:edit , :show , :update , :destroy]
+
   def index
     @cars = Car.all 
   end
 
-  def show
-    @car = Car.find(params[:id])
-  end
+  def show; end
 
   def new
     @car = Car.new
   end
 
-  def edit
-    @car = Car.find(params[:id])
-  end
+  def edit; end
 
   def create
     @car = Car.new (car_params)
-    @car.image.attach(params[:car][:image])
-
     respond_to do |format|
       if @car.save
         format.html { redirect_to cars_path, notice: "Car was sucessfully created"  }
@@ -29,8 +25,6 @@ class CarsController < ApplicationController
   end  
 
   def update
-    @car = Car.find(params[:id])
-    @car.image.attach(params[:car][:image])
      respond_to do |format|
       if @car.update(car_params)
         format.html {redirect_to cars_path, notice: "Car was sucessfully updated" }
@@ -41,7 +35,6 @@ class CarsController < ApplicationController
   end
 
   def destroy
-    @car = Car.find(params[:id])
     @car.destroy
     respond_to do |format|
       format.html { redirect_to cars_path, notice: "Car was deleted sucessfully" }
@@ -50,7 +43,11 @@ class CarsController < ApplicationController
 
   private
 
+  def set_cars
+    @car = Car.find(params[:id])
+  end
+
   def car_params
-    params.require(:car).permit(:vendor, :car_name, :model, :engine_capacity, :millage, :category, :color, :price, :description, :image)
+    params.require(:car).permit(:vendor, :car_name, :model, :engine_capacity, :millage, :category, :color, :price, :description, images: [])
   end
 end
