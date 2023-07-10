@@ -19,3 +19,8 @@
 .navbar-nav {
   margin-left: auto;
  }
+
+.background {
+  background-color: aliceblue;
+  color: black;
+}
