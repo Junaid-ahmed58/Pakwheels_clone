@@ -1,0 +1,10 @@
+<h1> Add a Car <h1>
+<br>
+<%= form_for(@car, url: car_description_path(@car)) do |f| %>
+  <h2> Description </h2>
+  <div class="form-group">
+    <%= f.text_area :description, rows: 10, coloumns: 10, class: "form-control", required: true%>
+  </div>
+<br>
+  <%= f.submit 'Create Car', class: "btn btn-secondary" %>
+<% end %>

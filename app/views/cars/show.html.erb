@@ -1,12 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-7">
+      <% @car.images.each do |image| %>
+        <%= image_tag image %>
+      <% end %>
+    </div>
+    <div class="col-md-5">
+      <%= render @car %>
 
-<% @car.images.each do |image| %>
-  <%= image_tag image  %>
-<% end%>
-<%= render @car %>
-
-<div>
-  <%= link_to "Edit this car", edit_car_path(@car) %> |
-  <%= link_to "Back to cars", cars_path %>
-
-  <%= button_to "Destroy this car", @car, method: :delete %>
+      <%= link_to "Edit this car", edit_car_path(@car), class: "btn btn-primary" %> |
+      <%= link_to "Back to cars", cars_path, class: "btn btn-primary" %>
+      <%= button_to "Destroy this car", @car, method: :delete %>
+    </div>
+  </div>
 </div>

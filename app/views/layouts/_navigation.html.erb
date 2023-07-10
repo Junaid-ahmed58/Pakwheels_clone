@@ -5,17 +5,15 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav ">
+        <%= link_to "Cars", cars_path, class: "btn btn-secondary" %>/
 
-      <% if user_signed_in? || user_signed_in?  %>
-       <%= button_to "Sign out", destroy_user_session_path,  method: :delete, class: "btn btn-primary"%>
-      <% else %>
-        <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary" %>/
-        <%= link_to "Sign in", new_user_session_path, class: "btn btn-primary"%>
-      <% end %>/
-
-      <%= link_to "Cars", cars_path, class: "btn btn-primary" %>
-
+        <% if user_signed_in? || user_signed_in?  %>
+          <%= button_to "Sign out", destroy_user_session_path,  method: :delete, class: "btn btn-secondary"%>
+        <% else %>
+          <%= link_to "Sign up", new_user_registration_path, class: "btn btn-secondary" %>/
+          <%= link_to "Sign in", new_user_session_path, class: "btn btn-secondary"%>
+        <% end %>
       </ul>
     </div>
   </div>
