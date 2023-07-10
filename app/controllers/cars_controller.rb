@@ -1,5 +1,5 @@
 class CarsController < ApplicationController
-  before_action :set_cars, only: [:edit , :show , :update , :destroy , :step2 , :step3]
+  before_action :set_cars, only: [:edit , :show , :update , :destroy , :image , :description]
 
   def index
     @cars = Car.all 
@@ -18,39 +18,39 @@ class CarsController < ApplicationController
     respond_to do |format|
       if @car.save
         session[:car_id] = @car.id
-        format.html { redirect_to car_step2_path(@car) }
+        format.html { redirect_to car_image_path(@car) }
       else
         format.html { render :new }
       end
     end
   end  
 
-  def step2
+  def image
     @car = Car.find(params[:id])
   end
 
-  def step2_update
+  def image_update
     @car = Car.find(params[:id])
     respond_to do |format|
       if @car.update (car_params)
-        format.html {redirect_to car_step3_path}
+        format.html {redirect_to car_description_path}
       else
-        format.html (render :step2)
+        format.html (render :image)
       end
     end
   end
 
-  def step3
+  def description
     @car = Car.find(params[:id])
   end
 
-  def step3_update
+  def description_update
     @car = Car.find(params[:id])
     respond_to do |format|
       if @car.update (car_params)
         format.html {redirect_to cars_path}
       else
-        format.html (render :step3)
+        format.html (render :description)
       end
     end
   end

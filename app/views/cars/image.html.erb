@@ -1,0 +1,9 @@
+<h1> Add a Car <h1>
+<br>
+<%= form_for(@car, url: car_image_path(@car)) do |f| %>
+  <h2> Images </h2>
+  <div class="form-group">
+    <%= f.file_field :image, class: "form-control"%>
+  </div>
+    <%= f.submit 'Next Step'%>
+<% end %>
