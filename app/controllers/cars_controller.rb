@@ -1,5 +1,5 @@
 class CarsController < ApplicationController
-  before_action :set_cars, only: [:edit , :show , :update , :destroy , :image , :description]
+  before_action :set_cars, only: [:edit , :show , :update ,  :destroy , :image , :image_update , :description , :description_update]
 
   def index
     @cars = Car.all 
@@ -23,42 +23,12 @@ class CarsController < ApplicationController
         format.html { render :new }
       end
     end
-  end  
-
-  def image
-    @car = Car.find(params[:id])
-  end
-
-  def image_update
-    @car = Car.find(params[:id])
-    respond_to do |format|
-      if @car.update (car_params)
-        format.html {redirect_to car_description_path}
-      else
-        format.html (render :image)
-      end
-    end
-  end
-
-  def description
-    @car = Car.find(params[:id])
-  end
-
-  def description_update
-    @car = Car.find(params[:id])
-    respond_to do |format|
-      if @car.update (car_params)
-        format.html {redirect_to cars_path}
-      else
-        format.html (render :description)
-      end
-    end
   end
 
   def update
-     respond_to do |format|
+    respond_to do |format|
       if @car.update(car_params)
-        format.html {redirect_to cars_path, notice: "Car was sucessfully updated" }
+        format.html {redirect_to car_image_path }
       else
         format.html (render :edit )
       end
@@ -69,6 +39,30 @@ class CarsController < ApplicationController
     @car.destroy
     respond_to do |format|
       format.html { redirect_to cars_path, notice: "Car was deleted sucessfully" }
+    end
+  end
+
+  def image; end
+
+  def image_update
+    respond_to do |format|
+      if @car.update (car_params)
+        format.html {redirect_to car_description_path}
+      else
+        format.html (render :image)
+      end
+    end
+  end
+
+  def description; end
+
+  def description_update
+    respond_to do |format|
+      if @car.update (car_params)
+        format.html {redirect_to cars_path}
+      else
+        format.html (render :description)
+      end
     end
   end
 
