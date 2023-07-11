@@ -1,11 +1,12 @@
 @import "bootstrap";
 
 .login > .card {
-  width: 25rem;
-  margin: auto;
+  width: 30rem;
+  height: 25rem;
+  margin-top: 10rem;
   float: none;
-  text-align: center; 
 }
+
 
 .card {
   color: black;
@@ -15,8 +16,21 @@
   float: none;
 }
 
+.row > .card{
+  width: 40rem;
+  margin-top: 100px;
+}
+
+.row > .card > .image{
+  width: 100%;
+  height: 400px;
+}
+
+.card-body > .card-text{
+  overflow: hidden;
+  height: 40px;
+}
 
 .navbar-nav {
   margin-left: auto;
  }
-
