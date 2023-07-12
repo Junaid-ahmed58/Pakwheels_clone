@@ -33,9 +33,12 @@
 
 .navbar-nav {
   margin-left: auto;
- }
+}
 
- .style{
+.style{
   color: aliceblue;
- }
- 
+}
+
+.search-classified-bg{
+  background-color: rgb(3, 3, 145);
+}
