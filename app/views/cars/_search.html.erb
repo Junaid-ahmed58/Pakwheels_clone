@@ -1,0 +1,20 @@
+<section class="search-classified-bg" style="background-image: url(https://cache1.pakwheels.com/system/super_boards/background_images/000/000/008/original/8.jpg?1649133660)">
+  <div class="search-classified-text text-center generic-white">
+    <div class="style">
+      <h1>Find Used Cars in Pakistan</h1>
+      <p>With thousands of cars, we have just the right one for you</p>
+    </div>
+    <div class="search-classified" >
+      <div class= "btn-classified-container text-center">
+        <%= form_with url: search_path, method: :get do |f| %>
+          <%= f.text_field :vendor, placeholder: "Vendor" %>
+          <%= f.text_field :car_name, placeholder: "Car_Name"%>
+          <%= f.text_field :model, placeholder: "Model" %>
+          <%= f.text_field :engine_capacity, placeholder: "Engine_Capacity"%> 
+          <%= f.submit "search" %> 
+          <i class="fas fa-search"></i>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
