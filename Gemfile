@@ -46,7 +46,9 @@ gem 'devise'
 
 gem 'byebug', '~> 11.1', '>= 11.1.3'
 
-gem 'elasticsearch', '~> 8.8'
+gem 'searchkick', '~> 5.3' 
+
+gem 'elasticsearch', '~> 7.10.1'
 # Use Sass to process CSS
 # gem "sassc-rails"
 
