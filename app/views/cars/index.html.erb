@@ -1,10 +1,7 @@
-<%= form_with url: search_path, method: :get do |f| %>
-  <%= f.label :search %>
-  <%= f.text_field :search%>
-  <%= f.submit "search" %>
-<% end %>
+<%= render 'search' %>
 <div id="cars">
   <%= render "cars/cars", cars: @cars %>
 </div>
 <br>
+
 <%= link_to "Add New Car", new_car_path, class: "btn btn-secondary" %>
