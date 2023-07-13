@@ -127,6 +127,9 @@ GEM
     faraday-patron (1.0.0)
     faraday-rack (1.0.0)
     faraday-retry (1.0.3)
+    ffi (1.15.5)
+    font-awesome-sass (6.4.0)
+      sassc (~> 2.0)
     globalid (1.1.0)
       activesupport (>= 5.0)
     hashie (5.0.0)
@@ -215,6 +218,8 @@ GEM
     rexml (3.2.5)
     ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
+    sassc (2.4.0)
+      ffi (~> 1.9)
     searchkick (5.3.0)
       activemodel (>= 6.1)
       hashie
@@ -269,6 +274,7 @@ DEPENDENCIES
   debug
   devise
   elasticsearch (~> 7.10.1)
+  font-awesome-sass (~> 6.4.0)
   importmap-rails
   jbuilder
   puma (~> 5.0)

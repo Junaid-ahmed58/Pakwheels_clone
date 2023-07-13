@@ -49,6 +49,8 @@ gem 'byebug', '~> 11.1', '>= 11.1.3'
 gem 'searchkick', '~> 5.3' 
 
 gem 'elasticsearch', '~> 7.10.1'
+gem "font-awesome-sass", "~> 6.4.0"
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
