@@ -1,16 +1,37 @@
-<div class="container">
+<p style="color: green"><%= notice %></p>
+<p id="notice"><%= notice %></p>
+<div class="container show">
   <div class="row">
-    <div class="col-md-7">
+    <h1 class="details"> Details About Car </h1>
+    <div class="col-md-7 ">
       <% @car.images.each do |image| %>
-        <%= image_tag image,  style: "width: 100%; height: 500px;" %>
+        <%= image_tag image, class: 'show-images'%>
       <% end %>
     </div>
-    <div class="col-md-5">
-      <%= render @car %>
-
-      <%= link_to "Edit this car", edit_car_path(@car), class: "btn btn-secondary" %> |
-      <%= link_to "Back to cars", cars_path, class: "btn btn-secondary" %>
-      <%= button_to "Destroy this car", @car, method: :delete, class: "btn btn-danger" %>
+    <div class="col-md-5 show-details">
+      <div class="jumbotron">
+        <h1 class="display-4"> 
+          <%= @car.vendor %>
+          <%= @car.car_name %>
+        </h1>
+        <p class="lead">
+          <%= @car.model %> |
+          <%= @car.engine_capacity%> |
+          <%= @car.millage%>
+        </p>
+        <p class="lead">
+          <%= @car.category %> |
+          <%= @car.color %> |
+          <%= @car.price %>
+        </p>
+        <h1> Description: </h1>
+        <h3><%= @car.description %></h3>
+        <br>
+        <hr class="my-4">
+        <%= link_to 'Edit', edit_car_path, class: "btn btn-secondary" %>  
+        <%= link_to 'Back to Cars', cars_path, class: "btn btn-secondary"%>
+        <%= button_to 'Delete', car_path, method: :delete, class: "btn btn-danger" %>
+      </div>
     </div>
   </div>
 </div>

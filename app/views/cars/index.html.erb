@@ -1,7 +1,8 @@
-<%= render 'search' %>
-<div id="cars">
-  <%= render "cars/cars", cars: @cars %>
+<div class="car-button">
+  <%= link_to new_car_url, class: "btn btn-lg btn-outline-danger" do %>
+    <i class="fa-solid fa-car"></i> Add New Car
+  <% end %>
 </div>
-<br>
-
-<%= link_to "Add New Car", new_car_path, class: "btn btn-secondary" %>
+<div id="cars">
+  <%= render partial: "cars/cars", locals: { cars: @cars } %>
+</div>

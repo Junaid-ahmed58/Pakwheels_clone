@@ -6,17 +6,19 @@
           <%= image_tag car.images.first, style: "width: 100%; height: 400px;" %>
         <% end %>
       </div>
-      <div class="card-body">
-        <h5 class="card-title"><%= car.car_name %> </h5>
-        <h6 class="card-text"><%= car.description %></h6>
-      </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item"><%= car.vendor %></li>
-        <li class="list-group-item"><%= car.car_name %></li>
-        <li class="list-group-item"><%= car.model %></li>
-      </ul>
-      <div class="card-body">
-        <a class="card-link"><%= link_to "Show More", car_path(car), class: "btn btn-secondary" %></a>
+      <div class="text-align">
+        <div class="card-body">
+          <h5 class="card-title"><%= car.car_name %> </h5>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><%= car.vendor %></li>
+          <li class="list-group-item"><%= car.car_name %></li>
+          <li class="list-group-item"><%= car.model %></li>
+        </ul>
+        <div class="card-body">
+          <h6 class="card-text"><%= car.description %></h6>
+          <a class="card-link"><%= link_to "Show More", car_path(car), class: "btn btn-secondary" %></a>
+        </div>
       </div>
     </div>
   <% end %>

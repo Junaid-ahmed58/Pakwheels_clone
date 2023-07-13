@@ -1,4 +1,4 @@
-<section class="search-classified-bg">
+<div class="search-classified-bg">
   <div class="search-classified-text text-center generic-white">
     <div class="style">
       <h1>Find Used Cars in Pakistan</h1>
@@ -11,10 +11,11 @@
           <%= f.text_field :car_name, placeholder: "Car_Name", class: 'search-fields'%>
           <%= f.text_field :model, placeholder: "Model", class: 'search-fields' %>
           <%= f.text_field :engine_capacity, placeholder: "Engine_Capacity", class: 'search-fields'%> 
-          <%= f.submit "search" %> 
-          <i class="fas fa-search"></i>
+          <%= button_tag type: 'submit', class: "btn btn-info", id: "search-button" do %>
+            <i class="fa-brands fa-searchengin"></i> Search
+          <% end %>
         <% end %>
       </div>
     </div>
   </div>
-</section>
+</div>
