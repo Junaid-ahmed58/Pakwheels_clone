@@ -5,8 +5,9 @@ Rails.application.routes.draw do
   patch 'cars/image/:id', to: 'cars#image_update'
   get 'cars/description/:id', to: 'cars#description', as: 'car_description'
   patch 'cars/description/:id', to: 'cars#description_update'
+  get 'search', to: 'search#search'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
-  root "pages#home"
+  root "cars#index"
 end

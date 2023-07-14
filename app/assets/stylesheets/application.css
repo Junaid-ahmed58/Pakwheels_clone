@@ -1,10 +1,11 @@
 @import "bootstrap";
+@import "font-awesome";
 
 .login > .card {
-  width: 25rem;
-  margin: auto;
+  width: 30rem;
+  height: 25rem;
+  margin-top: 10rem;
   float: none;
-  text-align: center; 
 }
 
 .card {
@@ -15,12 +16,87 @@
   float: none;
 }
 
+.row > .card{
+  width: 40rem;
+  margin-top: 100px;
+}
+
+.row > .card > .image{
+  width: 100%;
+  height: 400px;
+}
+
+.card-body > .card-text{
+  overflow: hidden;
+  height: 40px;
+}
+
+.text-align {
+  text-align: left;
+}
 
 .navbar-nav {
   margin-left: auto;
- }
+  padding: 20px;
+}
 
-.background {
+.btn-margin{
+  margin-left: 10px;
+}
+
+.style{
+  color: aliceblue;
+}
+
+.search-classified-bg{
+  background-color: #004aad;
+  padding: 40px;
+}
+
+.search-fields{
+  margin: 20px;
+  padding: 15px;
+  font-size: 20px;
+  border-radius: 10px;
+}
+
+.search{
+  padding: 12px;
+  font-size: 15px;
+  border-radius: 15px;
+  color: aliceblue;
+}
+
+.show-images{
+  width: 100%;
+  height: 500px;
+}
+
+.show{
+  padding: 10rem;
+}
+
+.details{
+  background-color: black;
+  color: aliceblue;
+  text-align: center;
+}
+
+.show-details{
+  padding: 20px;
+  font-size: 20px;
+}
+
+.car-button{
+  padding: 15px;
+  text-align: center;
   background-color: aliceblue;
-  color: black;
+}
+
+.card-block{
+  padding: 80px;
+}
+
+.nav-bar-back{
+  background-color: #004aad;
 }
