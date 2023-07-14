@@ -5,6 +5,13 @@ class CarsController < ApplicationController
     @cars = Car.all 
   end
 
+  def my_cars
+    @user_cars = current_user.cars
+    if @user_cars.blank?
+      flash.now[:notice] = "You have not added any cars yet."
+    end
+  end
+
   def show; end
 
   def new
