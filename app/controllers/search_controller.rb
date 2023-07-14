@@ -6,5 +6,4 @@ class SearchController < ApplicationController
                           partial: 'cars/cars',
                           locals: { cars: @results })
   end
-  
 end

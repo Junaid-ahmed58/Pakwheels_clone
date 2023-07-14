@@ -1,18 +1,12 @@
 @import "bootstrap";
 @import "font-awesome";
 
-.nav-bar{
-  background-color: #004aad ;
-}
-
-
 .login > .card {
   width: 30rem;
   height: 25rem;
   margin-top: 10rem;
   float: none;
 }
-
 
 .card {
   color: black;
@@ -100,5 +94,9 @@
 }
 
 .card-block{
-  padding:80px
+  padding: 80px;
+}
+
+.nav-bar-back{
+  background-color: #004aad;
 }
