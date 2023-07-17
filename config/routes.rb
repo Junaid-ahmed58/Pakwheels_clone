@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :cars do
+  resources :likes, only: [:create, :destroy]
     collection do
       get 'my_cars', to: 'cars#my_cars'
     end

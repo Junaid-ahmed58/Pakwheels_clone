@@ -17,6 +17,7 @@
         </ul>
         <div class="card-body">
           <h6 class="card-text"><%= car.description %></h6>
+          <p><%= car.likes.count %> <%= (car.likes.count) == 1 ? 'Like' : 'Likes'%></p>
           <a class="card-link"><%= link_to "Show More", car_path(car), class: "btn btn-secondary" %></a>
         </div>
       </div>
