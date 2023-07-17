@@ -52,7 +52,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_14_135137) do
     t.string "description"
     t.integer "engine_capacity"
     t.integer "user_id"
-    t.index ["user_id"], name: "index_cars_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -69,4 +68,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_14_135137) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "cars", "users"
 end
