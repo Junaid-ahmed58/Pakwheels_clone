@@ -17,7 +17,7 @@
 }
 
 .row > .card{
-  width: 40rem;
+  width: 30rem;
   margin-top: 100px;
 }
 
@@ -28,7 +28,7 @@
 
 .card-body > .card-text{
   overflow: hidden;
-  height: 40px;
+  height: 30px;
 }
 
 .text-align {
@@ -42,6 +42,10 @@
 
 .btn-margin{
   margin-left: 10px;
+}
+
+.margin{
+  margin-right: 10px;
 }
 
 .style{

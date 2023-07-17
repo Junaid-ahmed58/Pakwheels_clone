@@ -48,6 +48,7 @@ gem 'byebug', '~> 11.1', '>= 11.1.3'
 
 gem "font-awesome-sass", "~> 6.4.0"
 
+gem 'will_paginate', '~> 4.0'
 # Use Sass to process CSS
 gem "sassc-rails"
 

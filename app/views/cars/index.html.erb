@@ -1,3 +1,39 @@
 <div id="cars">
   <%= render partial: "cars/cars", locals: { cars: @cars } %>
 </div>
+
+<nav aria-label="Pagination">
+  <ul class="pagination justify-content-end">
+    <% if @cars.previous_page %>
+      <li class="page-item">
+        <%= link_to 'Previous', cars_path(page: @cars.previous_page), class: 'page-link' %>
+      </li>
+    <% else %>
+      <li class="page-item disabled">
+        <span class="page-link">Previous</span>
+      </li>
+    <% end %>
+
+    <% @cars.total_pages.times do |i| %>
+      <% if @cars.current_page == i + 1 %>
+        <li class="page-item active" aria-current="page">
+          <span class="page-link"><%= i + 1 %></span>
+        </li>
+      <% else %>
+        <li class="page-item">
+          <%= link_to i + 1, cars_path(page: i + 1), class: 'page-link' %>
+        </li>
+      <% end %>
+    <% end %>
+
+    <% if @cars.next_page %>
+      <li class="page-item">
+        <%= link_to 'Next', cars_path(page: @cars.next_page), class: 'page-link' %>
+      </li>
+    <% else %>
+      <li class="page-item disabled">
+        <span class="page-link">Next</span>
+      </li>
+    <% end %>
+  </ul>
+</nav>
