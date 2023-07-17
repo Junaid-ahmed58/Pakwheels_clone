@@ -31,6 +31,12 @@
         <%= link_to 'Edit', edit_car_path, class: "btn btn-secondary" %>  
         <%= link_to 'Back to Cars', cars_path, class: "btn btn-secondary"%>
         <%= button_to 'Delete', car_path, method: :delete, class: "btn btn-danger" %>
+        <% like = current_user.likes.find_by(car: @car) %>
+        <% if like.nil? %>
+          <%= button_to "Like", likes_path, params: {like: { car_id: @car.id}}, method: :post%>
+          <% else %>
+            <%= button_to "Unlike", like_path(like), method: :delete%>
+        <% end %>
       </div>
     </div>
   </div>

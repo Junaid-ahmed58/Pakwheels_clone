@@ -3,7 +3,7 @@ class Car < ApplicationRecord
   has_many_attached :images
   validates :vendor, :car_name, :model, :engine_capacity, :millage, :color, :price, presence: true
   belongs_to :user
-
+  has_many :likes
   def self.search(params)
     results = all
     results = results.where("vendor LIKE ?", "%#{params[:vendor]}%") if params[:vendor].present?
