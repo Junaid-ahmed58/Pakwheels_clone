@@ -1,6 +1,7 @@
 <div id="cars">
   <%= render partial: "cars/cars", locals: { cars: @cars } %>
 </div>
+
 <nav aria-label="Pagination">
   <ul class="pagination justify-content-end">
     <% if @cars.previous_page %>
