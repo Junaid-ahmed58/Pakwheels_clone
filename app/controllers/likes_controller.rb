@@ -1,24 +1,40 @@
 class LikesController < ApplicationController
+  before_action :already_liked
+  before_action :find_car, only: [:create, :destroy]
   def create
-    @like = current_user.likes.new(like_params)
-
+    if already_liked
+    flash[:notice] = "You cannot like more then once"
+    else
+      @like = current_user.likes.build(car: @car)
     if @like.save
-      flash[:notice]= ["Thanks for like this car"]
+      respond_to do |format|
+      format.html{redirect_to car_path(@car)}
+      format.js
+      end
     end
-
-    redirect_to @like.car
+    end
   end
 
   def destroy
-    @like = current_user.likes.find(params[:id])
-    car = @like.car
-    @like.destroy
-    redirect_to car_path
+    if !already_liked
+      flash[:notice] = "Cannot unlike"
+    else
+      @like = current_user.likes.find(params[:id])
+      @like.destroy
+    end
+    respond_to do |format|
+    format.html{redirect_to car_path(@car)}
+    format.js
+    end
   end
 
   private
 
-  def like_params
-    params.require(:like).permit(:car_id)
+  def already_liked
+    Like.where(user_id: current_user.id, car_id:params[:car_id]).exists?
+  end
+
+  def find_car
+    @car = Car.find(params[:car_id])
   end
 end
