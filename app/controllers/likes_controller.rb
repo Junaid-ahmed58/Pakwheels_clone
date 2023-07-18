@@ -1,17 +1,18 @@
 class LikesController < ApplicationController
   before_action :already_liked
   before_action :find_car, only: [:create, :destroy]
+
   def create
     if already_liked
-    flash[:notice] = "You cannot like more then once"
+      flash[:notice] = "You cannot like more then once"
     else
       @like = current_user.likes.build(car: @car)
-    if @like.save
-      respond_to do |format|
-      format.html{redirect_to car_path(@car)}
-      format.js
+      if @like.save
+        respond_to do |format|
+          format.html{redirect_to car_path(@car)}
+          format.js
+        end
       end
-    end
     end
   end
 
