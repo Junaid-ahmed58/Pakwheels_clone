@@ -104,3 +104,7 @@
 .nav-bar-back{
   background-color: #004aad;
 }
+
+.pagination{
+  text-align: end;
+}
