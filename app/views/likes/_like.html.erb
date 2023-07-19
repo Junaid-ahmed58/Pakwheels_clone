@@ -1,11 +1,11 @@
 <div class="like">
   <% pre_like = @car.likes.find { |like| like.user_id == current_user.id} %>
   <% if pre_like %>
-    <%= button_to car_like_path(@car, pre_like, format: :js), method: :delete do %>
+    <%= button_to car_like_path(@car, pre_like), method: :delete do %>
       <i class="fa fa-thumbs-down" aria-hidden="true"></i>
     <% end %>
   <% else %>
-    <%= button_to car_likes_path(@car, format: :js), method: :post do %>
+    <%= button_to car_likes_path(@car), method: :post do %>
       <i class="fa fa-thumbs-up" aria-hidden="true"></i>
     <% end %>
   <% end %>

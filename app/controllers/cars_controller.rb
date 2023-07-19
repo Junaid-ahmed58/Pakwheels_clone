@@ -2,13 +2,13 @@ class CarsController < ApplicationController
   before_action :set_cars, only: [:edit , :show , :update ,  :destroy , :image , :image_update , :description , :description_update]
 
   def index
-    @cars = Car.paginate(page: params[:page], per_page: 8).order(created_at: :desc)
+    @cars = Car.paginate(page: params[:page], per_page: 4).order(created_at: :desc)
   end
 
   def my_cars
     @user_cars = current_user.cars
     if @user_cars.blank?
-      flash.now[:notice] = "You have not added any cars yet."
+      flash.now[:alert] = "You have not added any cars yet."
     end
   end
 
