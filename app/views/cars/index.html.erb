@@ -1,6 +1,8 @@
+<%= render 'shared/car-carousel'%>
 <div id="cars">
   <%= render partial: "cars/cars", locals: { cars: @cars } %>
 </div>
 <div class="pagination">
   <%= will_paginate @car %>
+</div>
 </div>
