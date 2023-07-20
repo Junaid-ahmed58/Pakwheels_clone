@@ -115,3 +115,9 @@
   display: block;
   padding: 8px 16px;
 }
+
+.carousel{
+  background-color: aliceblue;
+  height: 100%;
+  width: 100%;
+}
