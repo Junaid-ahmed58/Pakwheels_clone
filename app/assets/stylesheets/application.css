@@ -105,6 +105,13 @@
   background-color: #004aad;
 }
 
+.footer-back{
+  color: white;
+  background-color: #004aad;
+  font-size: 17px;
+}
+
 .pagination{
-  text-align: end;
+  display: block;
+  padding: 8px 16px;
 }
