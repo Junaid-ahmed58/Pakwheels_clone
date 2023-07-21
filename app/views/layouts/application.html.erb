@@ -33,6 +33,12 @@
         <%= yield %>
       </div>
     </body>
-    <%= render 'shared/footer' %>
+    <% if user_signed_in? %>
+      <% if current_user.admin? %>
+        <%= render "shared/admin_footer" %>
+      <% else %>
+        <%= render "shared/footer" %>
+      <% end %>
+    <% end %>
   </html>
 </div>
