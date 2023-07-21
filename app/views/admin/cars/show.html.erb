@@ -1,0 +1,44 @@
+<p style="color: green"><%= notice %></p>
+<p id="notice"><%= notice %></p>
+<div class="container show">
+  <div class="row">
+    <h1 class="details"> Details About Car </h1>
+    <div class="col-md-7 ">
+      <% @car.images.each do |image| %>
+        <%= image_tag image, class: 'show-images'%>
+      <% end %>
+    </div>
+    <div class="col-md-5 show-details">
+      <div class="jumbotron">
+        <h1 class="display-4"> 
+          <%= @car.vendor %>
+          <%= @car.car_name %>
+        </h1>
+        <p class="lead">
+          <%= @car.model %> |
+          <%= @car.engine_capacity%> |
+          <%= @car.millage%>
+        </p>
+        <p class="lead">
+          <%= @car.category %> |
+          <%= @car.color %> |
+          <%= @car.price %>
+        </p>
+        <h1> Description: </h1>
+        <h3><%= @car.description %></h3>
+        <br>
+        <hr class="my-4">
+        <%= link_to 'Edit', edit_admin_car_path, class: "btn btn-secondary" %>  
+        <%= link_to 'Back to Cars', admin_cars_path, class: "btn btn-secondary"%>
+        <%= button_to 'Delete', admin_car_path, method: :delete, class: "btn btn-danger" %>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <h2>Comments</h2>
+  <% @car.comments.each do |comment| %>
+  <div>
+    <p><%= comment.content %></p>
+  </div>
+  <% end %>
+</div>

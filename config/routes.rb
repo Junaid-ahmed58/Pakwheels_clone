@@ -12,8 +12,14 @@ Rails.application.routes.draw do
   get 'cars/description/:id', to: 'cars#description', as: 'car_description'
   patch 'cars/description/:id', to: 'cars#description_update'
   get 'search', to: 'search#search'
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
+  
+  namespace :admin do
+    resources :cars
+    resources :users do
+      member do
+        get :toggle_status
+      end
+    end
+  end
   root "cars#index"
 end

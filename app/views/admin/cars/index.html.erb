@@ -1,0 +1,20 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Vendor</th>
+      <th scope="col">Car_name</th>
+      <th scope="col">Model</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @cars.each do |car| %>
+      <tr>
+        <td><%= car.vendor %></td>
+        <td><%= car.car_name%></td>
+        <td><%= car.model %></td>
+        <td><%= link_to "Show More", admin_car_path(car), class: "btn btn-secondary" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
