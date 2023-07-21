@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   enum role: { user: 'user', admin: 'admin' }
-  enum status: { active: 'active', deactive: 'deactive' }
+  enum status: { active: 'active', inactive: 'inactive' }
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   

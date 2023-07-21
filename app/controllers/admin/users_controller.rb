@@ -7,12 +7,12 @@ class Admin::UsersController < AdminController
 
 
   def toggle_status
-    if @user.active?
-      @user.deactive!
-    elsif @user.deactive?
-      @user.active!
+    @user = User.find(params[:id])
+    @user.status = @user.active? ? 'inactive' : 'active'
+    if @user.save
+      redirect_to admin_users_path(@user), notice: 'User status has been updated.'
+    else
+      redirect_to admin_users_path(@user), alert: 'Failed to update user status.'
     end
-    redirect_to admin_user_path, notice: 'Post status has been updated.' 
   end
-
 end
