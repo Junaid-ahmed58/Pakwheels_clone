@@ -2,9 +2,8 @@ class Admin::UsersController < AdminController
   def index
     @users = User.all
   end
-  def show
-  end
 
+  def show; end
 
   def toggle_status
     @user = User.find(params[:id])
