@@ -3,15 +3,15 @@
     <tr>
       <th scope="col">Email</th>
       <th scope="col">Status</th>
-      <th scope="col">Action</th>
+      <th scope="col">Action<th>
     </tr>
   </thead>
   <tbody>
     <% @users.each do |user| %>
       <tr>
        <td><%= user.email%></td>
-       <td><%= link_to user.status, toggle_status_admin_user_path(user) %></td>
-       <td><%= button_to 'Delete', admin_user_path(user), method: :delete %></td>
+       <td><%= link_to user.status, toggle_status_admin_user_path(user), class: "btn btn-dark" %></td>
+       <td><%= link_to 'Show', admin_user_path(user), class: "btn btn-secondary" %></td>
       </tr>
     <% end %>
   </tbody>

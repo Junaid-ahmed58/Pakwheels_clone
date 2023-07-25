@@ -1,11 +1,13 @@
 class Admin::UsersController < AdminController
-  before_action :set_admin_user, only: [:toggle_status , :destroy]
+  before_action :set_admin_user, only: [:show, :toggle_status, :destroy]
 
   def index
     @users = User.all
   end
 
-  def show; end
+  def show
+    @cars = @user.cars.all
+  end
 
   def toggle_status
     @user.status = @user.active? ? 'inactive' : 'active'
