@@ -7,8 +7,28 @@
       <%= render "devise/shared/error_messages", resource: resource %>
         <div class="row">
           <div class="form-group">
+            <%= f.label :First_Name %><br />
+            <%= f.text_field :first_name, autofocus: true, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :Last_Name %><br />
+            <%= f.text_field :last_name, autofocus: true, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
             <%= f.label :email %><br />
             <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+          <%= f.label :state %><br>
+          <%= f.select :states, options_for_select(CS.states(:pk)), {:prompt => "State"}, {:class => "signup-input-container--input", :id => "state-picker"} %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :City %><br>
+            <%= f.select :cities, options_for_select(CS.cities(:pb)),{:prompt => "Cities"}, {:class => "signup-input-container--input", :id => "city-picker"} %>
           </div>
 
           <div class="form-group">

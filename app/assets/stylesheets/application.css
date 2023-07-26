@@ -48,6 +48,10 @@
   margin-right: 10px;
 }
 
+.bt-margin{
+  margin-right: 10px;
+}
+
 .style{
   color: aliceblue;
 }
@@ -97,10 +101,6 @@
   background-color: aliceblue;
 }
 
-.card-block{
-  padding: 80px;
-}
-
 .nav-bar-back{
   background-color: #004aad;
 }
@@ -120,4 +120,16 @@
   background-color: aliceblue;
   height: 100%;
   width: 100%;
+}
+
+.admin_footer{
+  background-color: white ;
+  padding: 20px;
+}
+
+.main-logo{
+  width: 100%; 
+  height: 120px;
+  margin: 20px;  
+  border: 2px solid white;
 }

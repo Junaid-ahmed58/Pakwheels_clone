@@ -52,7 +52,9 @@ gem 'will_paginate', '~> 4.0'
 # Use Sass to process CSS
 gem "sassc-rails"
 gem 'jquery-rails'
-gem 'webpacker', '~> 5.4', '>= 5.4.4'
+
+gem 'city-state', '~> 0.1.0'
+
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
