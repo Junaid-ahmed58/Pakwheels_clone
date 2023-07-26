@@ -34,7 +34,9 @@
         <hr class="my-4">
         <%= link_to 'Edit', edit_car_path, class: "btn btn-secondary" %>  
         <%= link_to 'Back to Cars', cars_path, class: "btn btn-secondary"%>
-        <%= button_to 'Delete', car_path, method: :delete, class: "btn btn-danger" %>
+        <%= button_to car_path, method: :delete, class: "btn btn-danger" do %>
+          <i class="fa-solid fa-trash"></i>Delete
+        <% end %>
     </div>
   </div>
 </div>

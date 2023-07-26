@@ -1,18 +1,22 @@
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Email</th>
-      <th scope="col">Status</th>
-      <th scope="col">Action</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @users.each do |user| %>
+<div class="container">
+  <table class="table">
+    <thead>
       <tr>
-       <td><%= user.email%></td>
-       <td><%= link_to user.status, toggle_status_admin_user_path(user), class: "btn btn-dark" %></td>
-       <td><%= link_to 'Show', admin_user_path(user), class: "btn btn-secondary" %></td>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Status</th>
+        <th scope="col">Action</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+        <td><%= user.first_name%></td>
+        <td><%= user.email%></td>
+        <td><%= link_to user.status, toggle_status_admin_user_path(user), class: "btn btn-dark" %></td>
+        <td><%= link_to 'Show', admin_user_path(user), class: "btn btn-secondary" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
