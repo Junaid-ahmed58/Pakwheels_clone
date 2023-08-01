@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { sessions: 'users/sessions' }
   resources :cars do
-  resources :likes, only: [:create, :destroy]
-  resources :comments
+    resources :likes, only: [:create, :destroy]
+    resources :comments, only: [:create]
     collection do
       get 'my_cars', to: 'cars#my_cars'
     end

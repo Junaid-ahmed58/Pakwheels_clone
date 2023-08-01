@@ -1,0 +1,8 @@
+<%= form_with(model: [@car, @comment]) do |f| %>
+  <div class="form-group">
+    <%= f.label :content, 'New comment' %>
+    <%= f.text_area :content, class: 'form-control' %>
+  </div>
+  <br>
+  <%= f.submit 'Submit', class: 'btn btn-secondary' %>
+<% end %>
