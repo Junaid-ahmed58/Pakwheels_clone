@@ -2,7 +2,8 @@
 <div id="cars">
   <%= render partial: "shared/cars", locals: { cars: @cars } %>
 </div>
-<div class="pagination">
-  <%= will_paginate @car %>
-</div>
+<div class="center-pagination">
+  <div class="pagination">
+    <%= will_paginate @car %>
+  </div>
 </div>

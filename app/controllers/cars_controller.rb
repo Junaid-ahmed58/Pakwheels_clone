@@ -1,5 +1,5 @@
 class CarsController < ApplicationController
-  before_action :set_cars, only: [:edit , :show , :update ,  :destroy , :image , :image_update , :description , :description_update]
+  before_action :set_cars, only: [:edit, :show, :update,  :destroy, :image, :image_update, :description, :description_update]
 
   def index
     @cars = Car.paginate(page: params[:page], per_page: 4).order(created_at: :desc)
@@ -12,7 +12,9 @@ class CarsController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @comment = current_user.comments.build
+  end
 
   def new
     @car = Car.new
@@ -81,6 +83,6 @@ class CarsController < ApplicationController
   end
 
   def car_params
-    params.require(:car).permit(:vendor, :car_name, :model, :engine_capacity, :millage, :category, :color, :price, :description, :user_id, images:[])
+    params.require(:car).permit(:vendor, :car_name, :model, :engine_capacity, :millage, :category, :color, :price, :description, :user_id, images:[], comments_attributes: [:content])
   end
 end

@@ -30,21 +30,26 @@
         <div id='likescontainer'>
           <%= render 'likes/like' %>
         </div>
-        <%= render 'comments/comment' %>
+        <%= render 'comments'%>
         <hr class="my-4">
-        <%= link_to 'Edit', edit_car_path, class: "btn btn-secondary" %>  
-        <%= link_to 'Back to Cars', cars_path, class: "btn btn-secondary"%>
-        <%= button_to car_path, method: :delete, class: "btn btn-danger" do %>
-          <i class="fa-solid fa-trash"></i>Delete
+        <%if @car.user_id == current_user.id %>
+          <%= link_to 'Edit', edit_car_path, class: "btn btn-secondary" %>  
+          <%= button_to car_path, method: :delete, class: "btn btn-danger" do %>
+            <i class="fa-solid fa-trash"></i>Delete
+          <% end %>
         <% end %>
+        <%= link_to 'Back to Cars', cars_path, class: "btn btn-secondary"%>
     </div>
   </div>
 </div>
 <div class="container">
   <h2>Comments</h2>
-  <% @car.comments.each do |comment| %>
-  <div>
-    <p><%= comment.content %></p>
-  </div>
-  <% end %>
+    <% @car.comments.each do |comment| %>
+    <div>
+      <p>
+        <h3><%= comment.user.first_name %></h3> 
+        <%= comment.content %>
+      </p>
+    </div>
+    <% end %>
 </div>

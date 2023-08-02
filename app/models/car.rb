@@ -9,6 +9,8 @@ class Car < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many_attached :images
 
+  accepts_nested_attributes_for :comments
+
   def self.search(params)
     results = all
     results = results.where("vendor LIKE ?", "%#{params[:vendor]}%") if params[:vendor].present?

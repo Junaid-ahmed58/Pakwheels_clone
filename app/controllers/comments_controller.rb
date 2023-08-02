@@ -1,11 +1,10 @@
 class CommentsController < ApplicationController
 
   def create
-    @comment = current_user.comments.new(comment_params)
+    @comment = current_user.comments.build(comment_params)
     @comment.car_id = params[:car_id]
-    if @comment.save
-      redirect_to car_path(params[:car_id])
-    end
+    @comment.save
+    redirect_to car_path(params[:car_id])
   end
 
 private
